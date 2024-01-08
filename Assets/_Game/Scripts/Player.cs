@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-   
+
 public class Player : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] int width, height;
+    public int width, height;
     [SerializeField] PathCreator pathScript;
     int zPos;
     // Update is called once per frame
@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     }
     private void Up()
     {
+        transform.eulerAngles = Vector3.zero;
         zPos++;
         if(zPos > height)
         {
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
     }
     private void Down()
     {
+        transform.eulerAngles = new Vector3(0,180,0);
         if (zPos > height - 5)
         {
             zPos--;
@@ -59,7 +61,8 @@ public class Player : MonoBehaviour
     }
     private void LeftToRight(int value)
     {
+        transform.eulerAngles = new Vector3(0, 90 * value, 0);
         width += value;
-        width = Mathf.Clamp(width, -5, 5);
+        width = Mathf.Clamp(width, -6, 8);
     }
 }

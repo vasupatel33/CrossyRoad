@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Road
+  - 2
+  - 1
+  - tree
   layers:
   - Default
   - TransparentFX

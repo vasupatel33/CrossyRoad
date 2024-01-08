@@ -16,7 +16,9 @@ public class PathCreator : MonoBehaviour
     }
     public void CreatePath()
     {
-        Instantiate(AllPathObjects[Random.Range(0,AllPathObjects.Count)], transform.forward * PathCount, Quaternion.identity, this.transform);
+        Debug.Log("1");
+        int randomVal = Random.Range(0, AllPathObjects.Count);
+        Instantiate(AllPathObjects[randomVal], transform.forward * PathCount, Quaternion.identity, this.transform);
         PathCount++;
     }
 }
